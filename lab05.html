@@ -66,7 +66,7 @@
                         down = i;
                     }
                     else continue;
-
+                    
                     var k = (Py[up] - Py[down]) / (Px[up] - Px[down]);
                     for (var j = Py[down]; j < Py[up]; ++j) {
                         if (typeof y_array[j] == "undefined")
@@ -79,7 +79,7 @@
                     var x_array = y_array[y].sort(function(a, b) { return a - b; });
                     for (var j = 0; j < x_array.length / 2; ++j) {
                         for (var x = x_array[j * 2]; x < x_array[j * 2 + 1]; ++x) {
-                            ctx.fillRect(Math.round(x), Math.round(y), 1, 1);
+                            ctx.fillRect(Math.floor(x), Math.floor(y), 1, 1);
                         }
                     }
                 }
